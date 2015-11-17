@@ -1,0 +1,43 @@
+﻿@model ProView.Web.Areas.Home.Models.ArithmeticsModel
+@{
+    ViewBag.Title = "ProView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="admin-controls">
+    <form>
+        @Html.AntiForgeryToken()
+        <input id="page" name="page" type="hidden" value="@Model.Page" />
+        <div class="row">
+            <div class="span3">
+                <h2 style="padding-bottom: 0;">Danh sách biểu thức</h2>
+            </div>
+            <div class="span3" style="text-align: left; margin-top: 10px;">
+                Sắp xếp&nbsp;
+                <select name="sort" id="sort" style="width: 150px; margin-top: 7px;">
+                    @foreach (var key in Model.SortItems.Keys)
+                    {
+                        var selected = (key == @Model.Sort) ? "selected" : "";
+                        <option @selected value="@key">@Model.SortItems[key]</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="span12">
+
+        @Html.Partial("_Arithmetics", Model)
+
+    </div>
+</div>
+@section Scripts
+{
+    <script src="~/Scripts/Arithmetic.js"></script>
+    <script>
+        $(function () {
+
+            var arthimetics = Patterns.ProView.Arithmetics;
+            arthimetics.start();
+
+        });
+    </script>
+}

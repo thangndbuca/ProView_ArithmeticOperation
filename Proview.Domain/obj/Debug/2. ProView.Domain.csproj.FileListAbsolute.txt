@@ -1,0 +1,4 @@
+C:\ArithmeticOperation\Proview.Domain\bin\Debug\ProView.Domain.dll
+C:\ArithmeticOperation\Proview.Domain\bin\Debug\ProView.Domain.pdb
+C:\ArithmeticOperation\Proview.Domain\obj\Debug\ProView.Domain.dll
+C:\ArithmeticOperation\Proview.Domain\obj\Debug\ProView.Domain.pdb
